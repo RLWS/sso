@@ -8,7 +8,6 @@
 
     <!-- redis配置,使用的是Druid数据库连接池 -->
     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-
         <!-- 基本属性 maxIdle,maxTotal,maxWaitMillis -->
         <property name="maxIdle" value="${redis.maxIdle}"/>
         <property name="maxTotal" value="${redis.maxTotal}"/>

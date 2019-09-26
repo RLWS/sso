@@ -118,6 +118,23 @@
             <version>2.9.8</version>
         </dependency>
 
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.51</version>
+        </dependency>
+        <!-- jsch 所依赖的jar包  -->
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jzlib</artifactId>
+            <version>1.0.7</version>
+        </dependency>
 
         <!-- json end -->
 
@@ -134,6 +151,14 @@
             <artifactId>jedis</artifactId>
             <version>3.0.1</version>
         </dependency>
+
+        <!-- httpClient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.6</version>
+        </dependency>
+        <!-- httpClient -->
     </dependencies>
 
     <build>

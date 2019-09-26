@@ -35,6 +35,7 @@
                 <form class="form" id="entry_form" action="/login" method="post">
                     <input type="text" placeholder="用户名" id="entry_name" value="admin" name="email">
                     <input type="password" placeholder="密码" id="entry_password" name="password">
+                    <input type="hidden" id="requestUrl" name="requestUrl" value="${requestUrl}">
                     <button id="entry_btn">登录</button>
                     <div id="prompt" class="prompt"></div>
                 </form>
