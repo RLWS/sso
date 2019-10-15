@@ -31,15 +31,7 @@
     <div id="container">
         <div id="output">
             <div class="containerT">
-                <h1>用户登录</h1>
-                <form class="form" id="entry_form" action="/login" method="post">
-                    <input type="text" placeholder="用户名" id="entry_name" name="email">
-                    <input type="password" placeholder="密码" id="entry_password" name="password">
-                    <input type="hidden" id="requestUrl" name="requestUrl" value="${requestUrl}">
-                    <input type="hidden" id="condition" name="requestUrl" value="${condition}">
-                    <button id="entry_btn">登录</button>
-                    <div id="prompt" class="prompt"></div>
-                </form>
+                <h1>error</h1>
             </div>
         </div>
     </div>

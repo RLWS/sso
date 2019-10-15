@@ -14,20 +14,18 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
-    @Autowired
-    private RedisUtils redisUtils;
-
     @Override
     public User selectByEmail(String email , String pwd) {
         User user = userMapper.selectByEmail(email);
         if (user != null){
             String MD5Pwd = MD5Utils.encode(pwd);
             if (MD5Pwd.equals(user.getPassword())){
-                Long aLong = redisUtils.stringSet(user.getId() + "", MD5Pwd, 20);
-                System.out.println(aLong);
+                //addUserDataToRedis(user,MD5Pwd);
                 return user;
             }
         }
         return null;
     }
+
+
 }
