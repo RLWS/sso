@@ -1,19 +1,14 @@
 package com.rlws.sso.controller;
 
-import com.rlws.sso.commons.dto.BaseResult;
-import com.rlws.sso.commons.utils.CookiesUtils;
 import com.rlws.sso.commons.utils.RedisUtils;
 import com.rlws.sso.commons.utils.TokenUtils;
 import com.rlws.sso.entity.User;
 import com.rlws.sso.servies.UserService;
-import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -55,19 +50,21 @@ public class IndexController {
     }
 
     /**
-     * 用户登录
-     *
-     * @param user
-     * @return
+     * @param user       用户数据
+     * @param requestUrl 重定向地址
+     * @param condition  条件
+     * @return 重定向回去
      */
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public String login(User user, String requestUrl, String condition) {
         User reUser = userService.selectByEmail(user.getEmail(), user.getPassword());
+        System.out.println("condition:::" + condition);
+        System.out.println("requestUrl:::" + requestUrl);
         String token;
         if (reUser == null) {
             return "error";
         } else {
-            token = TokenUtils.getToken();
+            token = TokenUtils.getToken(reUser);
             addUserDataToRedis(reUser, token);
         }
         if (StringUtils.isEmpty(condition)) {

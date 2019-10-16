@@ -27,8 +27,7 @@ public class CriticalRegion {
     }
 
     public void token(){
-        String token = TokenUtils.getToken();
-        System.out.println(token);
+
     }
 
     @Test

@@ -36,7 +36,7 @@
                     <input type="text" placeholder="用户名" id="entry_name" name="email">
                     <input type="password" placeholder="密码" id="entry_password" name="password">
                     <input type="hidden" id="requestUrl" name="requestUrl" value="${requestUrl}">
-                    <input type="hidden" id="condition" name="requestUrl" value="${condition}">
+                    <input type="hidden" id="condition" name="condition" value="${condition}">
                     <button id="entry_btn">登录</button>
                     <div id="prompt" class="prompt"></div>
                 </form>

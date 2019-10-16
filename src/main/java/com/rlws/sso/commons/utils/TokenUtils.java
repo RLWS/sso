@@ -1,18 +1,17 @@
 package com.rlws.sso.commons.utils;
 
-import java.util.Random;
+import com.alibaba.fastjson.JSON;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.rlws.sso.entity.User;
 
 public class TokenUtils {
 
-    private static String token = "";
-
-    private static void productToken(){
-        String timer = System.currentTimeMillis()+new Random().nextInt()+"";
-        token = MD5Utils.encode(timer);
-    }
-
-    public static String getToken(){
-        productToken();
+    public static String getToken(User user) {
+        String token = "";
+        String s = JSON.toJSONString(user);
+        System.out.println(s);
+        token = JWT.create().withAudience(s).sign(Algorithm.HMAC256(user.getPassword()));
         return token;
     }
 }
