@@ -94,7 +94,7 @@ public class IndexController {
         if (requestUrl.endsWith("/")) {
             requestUrl = requestUrl.substring(0, requestUrl.length() - 1);
         }
-        return requestUrl + "?" + sb;
+        return requestUrl + "?" + sb + "token="+token;
     }
 
     /**

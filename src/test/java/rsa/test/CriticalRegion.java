@@ -78,4 +78,10 @@ public class CriticalRegion {
 //            //System.out.println("第"+next+"条重复");
 //        }
     }
+
+    @Test
+    public void test(){
+        StringBuilder sb = new StringBuilder();
+        System.out.println(":::"+sb.toString()+":::");
+    }
 }
